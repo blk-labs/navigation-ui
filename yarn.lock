@@ -907,7 +907,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/react@npm:^6.0.2":
+"@iconify/react@npm:^6.0.4":
   version: 6.0.4
   resolution: "@iconify/react@npm:6.0.4"
   dependencies:
@@ -5386,7 +5386,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:^20.4.2"
     "@eslint/js": "npm:^9.39.1"
     "@hookform/resolvers": "npm:^5.2.2"
-    "@iconify/react": "npm:^6.0.2"
+    "@iconify/react": "npm:^6.0.4"
     "@storybook/addon-links": "npm:^10.2.12"
     "@storybook/builder-vite": "npm:^10.2.12"
     "@storybook/react": "npm:^10.2.12"

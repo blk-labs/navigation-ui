@@ -11,4 +11,7 @@ export const ICON = {
   PROFILE: 'ri:user-6-line',
   PROFILE_FILLED: 'ri:user-6-fill',
   TIME: 'ri:time-line',
+  MENU: 'ri:menu-line',
+  LOGOUT: 'lets-icons:sign-out-circle',
+  CHECKMARK: 'akar-icons:circle-check-fill',
 } as const;

@@ -37,8 +37,8 @@ export default function MobileNavBase({
             }}
             className={`col-center rounded-lg cursor-pointer transition-all ease-in duration-150  size-15 text-[10px] gap-px ${
               active
-                ? ' bg-gray-800 text-secondary-200 ring ring-gray-700 font-bold'
-                : 'text-gray-500 border-none'
+                ? ' bg-primary-800 text-secondary-200 ring ring-primary-700 font-bold'
+                : 'text-primary-500 border-none'
             }`}
           >
             {renderIcon(active ? (r.activeIcon ?? r.icon) : r.icon)}

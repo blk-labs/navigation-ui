@@ -19,4 +19,7 @@ export const ICON = {
   HEADPHONES: 'ri:headphone-line',
   LOGOUT: 'ri:logout-circle-r-line',
   REFRESH: 'ri:refresh-line',
+  CART: 'ri:shopping-cart-2-line',
+  HELP: 'ri:question-line',
+  ACCOUNT: 'ri:user-line',
 } as const;

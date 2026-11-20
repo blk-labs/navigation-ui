@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 const libraryPages = [
   { label: 'Website navigation', to: '/website-nav' },
   { label: 'Enterprise dashboard', to: '/enterprise-nav' },
+  { label: 'Ecommerce navigation', to: '/ecommerce-nav' },
 ];
 
 export default function Home() {

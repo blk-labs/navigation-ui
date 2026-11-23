@@ -26,6 +26,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.yarn
+
 
 *storybook.log
 storybook-static

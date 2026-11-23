@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Outlet } from 'react-router-dom';
 import Home from '@/modules/pages/Home';
 import EcommerceNavPage from '@/modules/pages/ecommerce-nav';
 import EnterpriseNavPage from '@/modules/pages/enterprise-nav';
@@ -11,7 +11,7 @@ export const router: ReturnType<typeof createBrowserRouter> = createBrowserRoute
     path: '/',
     element: (
       <AppLayout>
-        <Home />
+        <Outlet />
       </AppLayout>
     ),
     children: [

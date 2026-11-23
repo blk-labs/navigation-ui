@@ -2,9 +2,10 @@ import MobileFrame from '@/shared/components/MobileFrame/MobileFrame';
 import { MobileNavBase } from '@/shared/components/MobileNav';
 import { Navbar } from '@/shared/components/Navbar';
 import { Container } from '@/shared/components/layout';
-import { GOV_PORTAL_ROUTES, MobileNavRoutes } from '@/shared/constants';
+import { GOV_PORTAL_ROUTES, MobileNavRoutes, SIDEBAR_ROUTES } from '@/shared/constants';
 import type { UserPortalProps } from '@/shared/components/UserPortal';
 import { useState } from 'react';
+import Sidebar from '@/shared/components/Sidebar';
 
 const DEMO_ROLES: UserPortalProps['roles'] = [
   { label: 'Business rep', value: 'business_rep' },
@@ -19,6 +20,9 @@ const DEMO_AGENCIES: UserPortalProps['agencies'] = [
 export default function Components() {
   const [active, setActive] = useState(MobileNavRoutes[0]?.route ?? '');
   const [activeNavRoute, setActiveNavRoute] = useState(GOV_PORTAL_ROUTES[0]?.route ?? '');
+  const [activeSidebarRoute, setActiveSidebarRoute] = useState(
+    SIDEBAR_ROUTES[0]?.routes[0]?.route ?? '/dashboard',
+  );
 
   // UserPortal state
   const [role, setRole] = useState(DEMO_ROLES[0].value);
@@ -30,7 +34,9 @@ export default function Components() {
     roles: DEMO_ROLES,
     activeRole: role,
     onRoleChange: setRole,
-    onSignOut: () => { console.log('sign out'); },
+    onSignOut: () => {
+      console.log('sign out');
+    },
   };
 
   /** Agency variant — with agency switcher */
@@ -97,6 +103,16 @@ export default function Components() {
               onNavigate={setActiveNavRoute}
               userPortal={agencyPortal}
             />
+          </Container>
+        </div>
+
+        {/* Large SASS Platform */}
+        <div className="flex w-full items-center flex-col gap-6">
+          <div>
+            <h2 className="text-gray-50 text-2xl font-medium">Large SASS Platform</h2>
+          </div>
+          <Container className="bg-neutral-200! h-max p-6  w-full">
+            <Sidebar activeRoute={activeSidebarRoute} onNavigate={setActiveSidebarRoute} />
           </Container>
         </div>
       </section>

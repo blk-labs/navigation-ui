@@ -14,4 +14,7 @@ export const ICON = {
   MENU: 'ri:menu-line',
   LOGOUT: 'lets-icons:sign-out-circle',
   CHECKMARK: 'akar-icons:circle-check-fill',
+  SEARCH: 'ri:search-2-line',
+  FILTER: 'ri:filter-2-fill',
+  DASHBOARD: 'ri:dashboard-fill',
 } as const;

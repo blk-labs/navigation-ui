@@ -23,30 +23,31 @@ export const router: ReturnType<typeof createBrowserRouter> = createBrowserRoute
         path: '/components',
         element: <Components />,
       },
+
+      {
+        path: '/website-nav',
+        element: <WebsiteNavPage />,
+      },
+      {
+        path: '/website-nav/*',
+        element: <WebsiteNavPage />,
+      },
+      {
+        path: '/enterprise-nav',
+        element: <EnterpriseNavPage />,
+      },
+      {
+        path: '/enterprise-nav/*',
+        element: <EnterpriseNavPage />,
+      },
+      {
+        path: '/ecommerce-nav',
+        element: <EcommerceNavPage />,
+      },
+      {
+        path: '/ecommerce-nav/*',
+        element: <EcommerceNavPage />,
+      },
     ],
-  },
-  {
-    path: '/website-nav',
-    element: <WebsiteNavPage />,
-  },
-  {
-    path: '/website-nav/*',
-    element: <WebsiteNavPage />,
-  },
-  {
-    path: '/enterprise-nav',
-    element: <EnterpriseNavPage />,
-  },
-  {
-    path: '/enterprise-nav/*',
-    element: <EnterpriseNavPage />,
-  },
-  {
-    path: '/ecommerce-nav',
-    element: <EcommerceNavPage />,
-  },
-  {
-    path: '/ecommerce-nav/*',
-    element: <EcommerceNavPage />,
   },
 ]);

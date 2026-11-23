@@ -48,3 +48,26 @@ export const MobileNavRoutes: NavRoute[] = [
     icon: ICON.CARDS,
   },
 ];
+
+export const GOV_PORTAL_ROUTES: NavRoute[] = [
+  {
+    label: 'Home',
+    route: '#',
+  },
+  {
+    label: 'Requests',
+    route: '#requests',
+  },
+  {
+    label: 'Account',
+    route: '#account',
+  },
+  {
+    label: 'Support',
+    route: '#support',
+  },
+  {
+    label: 'Licensing',
+    route: '#licensing',
+  },
+];

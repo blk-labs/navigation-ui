@@ -7,31 +7,32 @@
   /* Colors (Removed quotes from hex codes) */
   --color-primary: #30354a;
   --color-foreground: #f5f6fa;
-  --color-primary-300: #8c94ba;
-  --color-primary-400: #545e8c;
-  --color-primary-500: #232c56;
-  --color-primary-600: #1e2548;
 
-  --color-gray-500: #5e6e99;
-  --color-gray-700: #3d4667;
-  --color-gray-800: #353d57;
+  --color-primary-300: #8c94ba;
+  --color-primary-400: #7e8cb2;
+  --color-primary-500: #5e6e99;
+  --color-primary-600: #1e2548;
+  --color-primary-700: #3d4667;
+  --color-primary-800: #353d57;
 
   --color-secondary: #836af0;
   --color-secondary-200: #c1b5f8;
-  --color-secondary-300: #e3cc6b;
+  --color-secondary-300: #a290f4;
   --color-secondary-500: #d1aa08;
   --color-secondary-700: #7d6605;
   --color-secondary-900: #2a2202;
 
   --color-neutral: #f1f1f3;
+  --color-neutral-50: #f1f2f5;
   --color-neutral-100: #e3e4e8;
   --color-neutral-150: #d5d6dc;
+  --color-neutral-250: #b1b3be;
   --color-neutral-300: #abadba;
   --color-neutral-400: #8f92a3;
   --color-neutral-600: #5c5f70;
-  --color-neutral-950: #0c0c0e;
+  --color-neutral-900: #101116;
 
-  --color-danger: #cf3333;
+  --color-danger: #eb0101;
 }
 
 body {

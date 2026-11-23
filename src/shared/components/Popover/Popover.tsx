@@ -142,7 +142,7 @@ Popover.Trigger = function Trigger({
           }
         }
       }}
-      className="outline-0"
+      className="outline-0 w-fit"
     >
       {children}
     </span>
@@ -173,7 +173,7 @@ Popover.Content = function Content({
         width: 'auto',
         minWidth: size.width,
       }}
-      className={`rounded-lg right-0  flex flex-col gap-5  z-30 absolute min-h-4 bg-neutral-50 text-neutral-950  ${className ?? ''}`}
+      className={`rounded-lg right-0  flex flex-col gap-5  z-30 absolute min-h-4 bg-neutral-50 text-neutral-950 shadow-lg  ${className ?? ''}`}
     >
       {children(closePopOver)}
     </ul>

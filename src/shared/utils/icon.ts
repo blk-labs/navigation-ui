@@ -4,6 +4,7 @@ export const ICON = {
   ARROW_RIGHT: 'ri:arrow-right-s-line',
   ARROW_UP: 'ri:arrow-up-s-line',
   MENU: 'ri:menu-line',
+  CLOSE: 'ri:close-line',
   FILE_COPY: 'ri:file-copy-line',
   WIFI_OFF: 'ri:wifi-off-line',
   SIDEBAR_FOLD: 'ri:sidebar-fold-line',

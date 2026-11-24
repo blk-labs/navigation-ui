@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from '@/modules/pages/Home';
+import AnimatedCompanyNavPage from '@/modules/pages/animated-company-nav';
 import EcommerceNavPage from '@/modules/pages/ecommerce-nav';
 import EnterpriseNavPage from '@/modules/pages/enterprise-nav';
 import WebsiteNavPage from '@/modules/pages/website-nav';
@@ -37,5 +38,13 @@ export const router: ReturnType<typeof createBrowserRouter> = createBrowserRoute
   {
     path: '/ecommerce-nav/*',
     element: <EcommerceNavPage />,
+  },
+  {
+    path: '/animated-company-nav',
+    element: <AnimatedCompanyNavPage />,
+  },
+  {
+    path: '/animated-company-nav/*',
+    element: <AnimatedCompanyNavPage />,
   },
 ]);

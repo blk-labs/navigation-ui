@@ -1,6 +1,5 @@
 export type EnterpriseBadge =
-  | { kind: 'count'; value: number }
-  | { kind: 'pill'; label: string; tone: 'accent' | 'muted' };
+  { kind: 'count'; value: number } | { kind: 'pill'; label: string; tone: 'accent' | 'muted' };
 
 export interface EnterpriseNavItem {
   id: string;

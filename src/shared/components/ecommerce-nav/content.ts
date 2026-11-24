@@ -5,7 +5,10 @@ export const defaultOfflineMessage = "You're currently offline, please reconnect
 function links(path: string, labels: readonly string[]) {
   return labels.map((label) => ({
     label,
-    href: `${path}/${label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`,
+    href: `${path}/${label
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '')}`,
   }));
 }
 
@@ -15,7 +18,13 @@ function columns(
 ): EcommerceColumn[] {
   return entries.map((entry) => ({
     title: entry.title,
-    links: links(`${path}/${entry.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`, entry.labels),
+    links: links(
+      `${path}/${entry.title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '')}`,
+      entry.labels,
+    ),
   }));
 }
 
@@ -119,7 +128,12 @@ export const officeMenu = columns('/office', [
 ]);
 
 export const defaultCategories: EcommerceCategory[] = [
-  { id: 'official-store', label: 'Official Store', href: '/official-store', menu: officialStoreMenu },
+  {
+    id: 'official-store',
+    label: 'Official Store',
+    href: '/official-store',
+    menu: officialStoreMenu,
+  },
   { id: 'electronics', label: 'Electronics', href: '/electronics', menu: electronicsMenu },
   { id: 'fashion', label: 'Fashion', href: '/fashion', menu: fashionMenu },
   { id: 'home', label: 'Home', href: '/home', menu: homeMenu },

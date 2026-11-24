@@ -225,7 +225,12 @@ export default function EnterpriseNav({
         className,
       )}
     >
-      <div className={classNames('flex items-center pt-4', collapsed ? 'justify-center px-2' : 'justify-between gap-3 px-4')}>
+      <div
+        className={classNames(
+          'flex items-center pt-4',
+          collapsed ? 'justify-center px-2' : 'justify-between gap-3 px-4',
+        )}
+      >
         {collapsed ? null : (
           <Link to={brandHref} className="min-w-0" onClick={closeProfile}>
             <img src={logo} alt={brandName} className="h-9 w-auto" />
@@ -274,7 +279,12 @@ export default function EnterpriseNav({
               Search
             </label>
             <div className="flex h-[46px] items-center gap-2 rounded-xl bg-[#353d57] px-3">
-              <Icon icon={ICON.SEARCH} fontSize={16} aria-hidden="true" className="shrink-0 text-[#8b93a8]" />
+              <Icon
+                icon={ICON.SEARCH}
+                fontSize={16}
+                aria-hidden="true"
+                className="shrink-0 text-[#8b93a8]"
+              />
               <input
                 ref={searchRef}
                 id={searchId}
@@ -290,7 +300,12 @@ export default function EnterpriseNav({
         )}
       </div>
 
-      <div className={classNames('mt-5 flex-1 overflow-y-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden', collapsed ? 'px-2' : 'px-4')}>
+      <div
+        className={classNames(
+          'mt-5 flex-1 overflow-y-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
+          collapsed ? 'px-2' : 'px-4',
+        )}
+      >
         <Section label="Main menu" collapsed={collapsed}>
           {visibleItems.length === 0 ? (
             <Empty collapsed={collapsed} />
@@ -353,7 +368,13 @@ export default function EnterpriseNav({
           className="relative mt-3 border-t border-white/10 py-3"
         >
           {profileOpen ? (
-            <div className={collapsed ? 'absolute bottom-0 left-full z-30 ml-3 w-[255px]' : 'absolute bottom-full left-0 z-30 mb-3 w-[255px]'}>
+            <div
+              className={
+                collapsed
+                  ? 'absolute bottom-0 left-full z-30 ml-3 w-[255px]'
+                  : 'absolute bottom-full left-0 z-30 mb-3 w-[255px]'
+              }
+            >
               <ProfileMenu
                 name={user.name}
                 email={user.email}
@@ -379,7 +400,9 @@ export default function EnterpriseNav({
             {collapsed ? null : (
               <>
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm font-semibold text-white">{user.name}</span>
+                  <span className="block truncate text-sm font-semibold text-white">
+                    {user.name}
+                  </span>
                   <span className="mt-0.5 block truncate text-xs text-[#9aa3b8]">{user.email}</span>
                 </span>
                 <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-[#3a415c] text-[#c5cad6]">
@@ -531,9 +554,10 @@ function ItemRow({
     depth === 0 && !active && 'hover:bg-[#353d57]',
     focusRing,
   );
-  const marker = item.badge?.kind === 'count' ? (
-    <span className="absolute top-1.5 right-1.5 size-1.5 rounded-full bg-[#ef4444]" />
-  ) : null;
+  const marker =
+    item.badge?.kind === 'count' ? (
+      <span className="absolute top-1.5 right-1.5 size-1.5 rounded-full bg-[#ef4444]" />
+    ) : null;
 
   if (collapsed) {
     if (item.children) {
@@ -579,12 +603,22 @@ function ItemRow({
   const body = (
     <>
       {item.icon ? (
-        <Icon icon={item.icon} fontSize={18} aria-hidden="true" className={classNames('shrink-0', iconTone)} />
+        <Icon
+          icon={item.icon}
+          fontSize={18}
+          aria-hidden="true"
+          className={classNames('shrink-0', iconTone)}
+        />
       ) : null}
       <span className="min-w-0 flex-1 truncate">{item.label}</span>
       {item.badge ? <BadgeView badge={item.badge} /> : null}
       {syncing ? (
-        <Icon icon={ICON.REFRESH} fontSize={16} aria-hidden="true" className="shrink-0 animate-spin text-[#8b93a8]" />
+        <Icon
+          icon={ICON.REFRESH}
+          fontSize={16}
+          aria-hidden="true"
+          className="shrink-0 animate-spin text-[#8b93a8]"
+        />
       ) : null}
       {item.children ? (
         <Icon
@@ -660,7 +694,10 @@ function FolderRow({
         icon={ICON.FOLDER}
         fontSize={18}
         aria-hidden="true"
-        className={classNames('shrink-0', active ? 'text-[#a290f4]' : 'text-[#8b93a8] group-hover:text-[#c1b5f8]')}
+        className={classNames(
+          'shrink-0',
+          active ? 'text-[#a290f4]' : 'text-[#8b93a8] group-hover:text-[#c1b5f8]',
+        )}
       />
       <span className="min-w-0 flex-1 truncate">{folder.label}</span>
       <span className="inline-flex items-center gap-1 rounded-full bg-[#3a415c] px-2 py-0.5 text-[11px] text-[#c5cad6]">

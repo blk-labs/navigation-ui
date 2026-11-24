@@ -1,13 +1,9 @@
 import { Icon } from '@iconify/react';
-import { useState, type ReactNode } from 'react';
+import { useState } from 'react';
 import type { BaseProps } from './types';
 import { ICON } from '@/shared/utils/icon';
 import { AnimatePresence, motion } from 'motion/react';
-
-function renderIcon(icon?: ReactNode | string) {
-  if (!icon) return null;
-  return typeof icon === 'string' ? <Icon icon={icon} fontSize={21} /> : icon;
-}
+import { renderIcon } from '../common/RenderIcon';
 
 export default function MobileNavBase({
   routes,

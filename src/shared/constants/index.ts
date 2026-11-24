@@ -113,8 +113,13 @@ export const SIDEBAR_ROUTES: NavGroup[] = [
         route: '/transactions',
         subRoutes: [
           { label: 'All Transactions', route: '/transactions/all' },
-          { label: 'Pending Transactions', route: '/transactions/pending' },
-          { label: 'Failed Transactions', route: '/transactions/failed' },
+          { label: 'Pending Transactions', route: '/transactions/pending', alertCount: 4 },
+          {
+            label: 'Failed Transactions',
+            route: '/transactions/failed',
+            alertCount: 12,
+            alertVariant: 'danger',
+          },
           { label: 'Reversals', route: '/transactions/reversals' },
           { label: 'Settlements', route: '/transactions/settlements' },
           { label: 'Reconciliation', route: '/transactions/reconciliation' },
@@ -125,9 +130,14 @@ export const SIDEBAR_ROUTES: NavGroup[] = [
         label: 'Disputes',
         route: '/disputes',
         subRoutes: [
-          { label: 'Open Disputes', route: '/disputes/open' },
+          {
+            label: 'Open Disputes',
+            route: '/disputes/open',
+            alertCount: 3,
+            alertVariant: 'danger',
+          },
           { label: 'Resolved Disputes', route: '/disputes/resolved' },
-          { label: 'Chargebacks', route: '/disputes/chargebacks' },
+          { label: 'Chargebacks', route: '/disputes/chargebacks', alertCount: 1 },
           { label: 'Escalations', route: '/disputes/escalations' },
           { label: 'Evidence Submissions', route: '/disputes/evidence' },
           { label: 'Documentation', route: '/disputes/documentation' },

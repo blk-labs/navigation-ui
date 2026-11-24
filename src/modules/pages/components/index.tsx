@@ -48,6 +48,18 @@ export default function Components() {
     onAgencyChange: setAgency,
   };
 
+  /** Sidebar user configuration */
+  const sidebarUser = {
+    name: 'Steven Olakunle',
+    email: 'admin@mail.com',
+    roles: DEMO_ROLES,
+    activeRole: role,
+    onRoleChange: setRole,
+    onSignOut: () => {
+      console.log('sign out');
+    },
+  };
+
   return (
     <div className="bg-primary p-5 col-center min-h-screen">
       <section className="w-full px-6 flex flex-col gap-15 items-center">
@@ -112,7 +124,11 @@ export default function Components() {
             <h2 className="text-gray-50 text-2xl font-medium">Large SASS Platform</h2>
           </div>
           <Container className="bg-neutral-200! h-max p-6  w-full">
-            <Sidebar activeRoute={activeSidebarRoute} onNavigate={setActiveSidebarRoute} />
+            <Sidebar
+              activeRoute={activeSidebarRoute}
+              onNavigate={setActiveSidebarRoute}
+              user={sidebarUser}
+            />
           </Container>
         </div>
       </section>

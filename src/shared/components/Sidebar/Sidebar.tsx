@@ -25,14 +25,14 @@ export default function Sidebar({
         : 'text-neutral-300 hover:bg-primary-800/50 hover:text-neutral-50',
     );
 
-  const renderContent = (link: NavGroupItem, isActive: boolean) => {
+  const renderContent = (link: NavGroupItem, isActive: boolean, isRecentViewed?: boolean) => {
     const icon = link.icon ? renderIcon(link.icon) : ICON.DASHBOARD;
     const hasSubroute = Boolean(link.subRoutes && link.subRoutes.length > 0);
 
     return (
       <>
         <Icon
-          icon={icon as string}
+          icon={isRecentViewed ? ICON.RECENT : (icon as string)}
           className={isActive ? 'text-secondary-300' : 'text-primary-500'}
           fontSize={18}
         />
@@ -74,6 +74,11 @@ export default function Sidebar({
                   <ul className="flex flex-col gap-1">
                     {el.routes.map((link) => {
                       const isActive = isControlled && activeRoute === link.route;
+                      const isRecentViewed = el.label.toLowerCase().includes('recently');
+
+                      {
+                        console.log(el.label, isRecentViewed);
+                      }
                       return (
                         <li key={link.route}>
                           {isControlled ? (
@@ -89,7 +94,9 @@ export default function Sidebar({
                               to={link.route}
                               className={({ isActive: navActive }) => getLinkClass(navActive)}
                             >
-                              {({ isActive: navActive }) => renderContent(link, navActive)}
+                              {({ isActive: navActive }) =>
+                                renderContent(link, navActive, isRecentViewed)
+                              }
                             </NavLink>
                           )}
                         </li>

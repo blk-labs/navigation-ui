@@ -66,7 +66,9 @@ export default function UserPortal({
                   return (
                     <li
                       key={el.value}
-                      onClick={() => { onRoleChange(el.value); }}
+                      onClick={() => {
+                        onRoleChange(el.value);
+                      }}
                       className={classNames(
                         'flex-between cursor-pointer px-4 py-3 rounded-lg transition-all ease-in duration-150',
                         isSelected ? 'bg-[#DEE2F4]' : 'hover:bg-neutral-50',

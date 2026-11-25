@@ -5,6 +5,7 @@ const libraryPages = [
   { label: 'Enterprise dashboard', to: '/enterprise-nav' },
   { label: 'Ecommerce navigation', to: '/ecommerce-nav' },
   { label: 'Animated company navigation', to: '/animated-company-nav' },
+  { label: 'Animated portfolio navigation', to: '/animated-portfolio-nav' },
 ];
 
 export default function Home() {

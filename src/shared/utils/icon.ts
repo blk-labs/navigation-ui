@@ -1,5 +1,6 @@
 export const ICON = {
   HOME: 'ri:home-9-line',
+  HOME_LINE: 'ri:home-line',
   ARROW_DOWN: 'ri:arrow-down-s-line',
   ARROW_RIGHT: 'ri:arrow-right-s-line',
   ARROW_UP: 'ri:arrow-up-s-line',
@@ -11,6 +12,9 @@ export const ICON = {
   SIDEBAR_UNFOLD: 'ri:sidebar-unfold-line',
   SEARCH: 'ri:search-line',
   DASHBOARD: 'ri:layout-grid-line',
+  DASHBOARD_LINE: 'ri:dashboard-line',
+  INFO: 'ri:information-line',
+  NEWSPAPER: 'ri:newspaper-line',
   NOTIFICATION: 'ri:notification-3-line',
   USER: 'ri:user-3-line',
   BRANCH: 'ri:git-branch-line',

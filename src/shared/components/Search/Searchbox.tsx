@@ -99,12 +99,9 @@ interface AnimatedSearchBoxProps {
   searchKey: string;
 }
 
-// All three paths use the same commands (M L C C C C C) so motion can interpolate `d`
-// Exact path from the Lottie: circle -> handle -> hook -> vertical stem
 const ICON_PATH =
   'M14.565 8.253C14.604 7.945 14.625 7.631 14.625 7.312C14.625 3.273 11.351 0 7.312 0C3.273 0 0 3.273 0 7.312C0 11.351 3.273 14.625 7.312 14.625C9.31 14.625 11.121 13.823 12.441 12.525C13.541 13.625 14.642 14.727 15.742 15.827C16.736 16.738 19.236 21.737 23.736 21.737C26.236 21.737 28.736 20.737 28.736 16.237C28.736 12.637 28.736 4.737 28.736 1.237';
 
-// Trim window along the path (fractions of total length)
 const TRIM_ICON = { pathLength: 0.58, pathOffset: 0 };
 const TRIM_CARET = { pathLength: 0.18, pathOffset: 0.82 };
 
@@ -143,7 +140,6 @@ function AnimatedSearchBox({
       transition={{ duration, ease }}
       className="w-full text-neutral-50 bg-accent-500 text-sm p-3 flex-between max-w-135.25 rounded-2xl gap-4"
     >
-      {/* 21px slot + gap-4 = 37px, so the text starts 49px from the left edge like in Figma */}
       <span aria-hidden className="relative self-stretch w-[21px] shrink-0">
         <motion.svg
           width={31}
@@ -179,7 +175,6 @@ function AnimatedSearchBox({
         {placeholder}
       </label>
 
-      {/* overflow-hidden clips the placeholder while it is below the field */}
       <div className="relative w-full overflow-hidden">
         <input
           id={inputId}

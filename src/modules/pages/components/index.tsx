@@ -24,6 +24,7 @@ export default function Components() {
   const [activeSidebarRoute, setActiveSidebarRoute] = useState(
     SIDEBAR_ROUTES[0]?.routes[0]?.route ?? '/dashboard',
   );
+  const [activeEcomSubRoute, setActiveEcomSubRoute] = useState('');
 
   // UserPortal state
   const [role, setRole] = useState(DEMO_ROLES[0].value);
@@ -137,7 +138,11 @@ export default function Components() {
             <h2 className="text-gray-50 text-2xl font-medium">Animated Ecommerce Nav</h2>
           </div>
           <Container className="bg-neutral-200! h-max p-6  w-full">
-            <EcomNav routes={navRoutes} />
+            <EcomNav
+              routes={navRoutes}
+              activeSubRoute={activeEcomSubRoute}
+              onNavigate={setActiveEcomSubRoute}
+            />
           </Container>
         </div>
       </section>

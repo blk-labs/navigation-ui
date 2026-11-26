@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 import Logo from '../Logo';
 import { classNames } from '../utils/classNames';
 import Searchbox from '../Search/Searchbox';
-import type { EcomNavRoute, SubRoute } from './types';
+import type { EcomNavProps, SubRoute } from './types';
 import { Link } from 'react-router-dom';
 
 const btnClass =
@@ -19,9 +19,11 @@ const groupSubRoutes = (subRoutes: SubRoute[]) => {
   return [...map.entries()];
 };
 
-export default function EcomNav({ routes }: { routes: EcomNavRoute[] }) {
+export default function EcomNav({ routes, activeSubRoute, onNavigate }: EcomNavProps) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [previewSrc, setPreviewSrc] = useState<string | null>(null);
+
+  const isControlled = activeSubRoute !== undefined;
 
   const activeRoute = routes.find((r) => r.label === hovered);
   const subRoutes = activeRoute?.subRoutes;
@@ -119,26 +121,60 @@ export default function EcomNav({ routes }: { routes: EcomNavRoute[] }) {
                     {groupSubRoutes(subRoutes).map(([group, items]) => (
                       <div key={group} className="flex flex-col gap-3">
                         {group && <h4 className="text-[#C5D9F8] mb-2">{group}</h4>}
-                        {items.map((link) => (
-                          <Link
-                            key={link.route}
-                            to={link.route}
-                            onMouseEnter={() => {
-                              setPreviewSrc(link.image);
-                            }}
-                            className="group relative block overflow-hidden text-lg leading-normal text-neutral-50"
-                          >
-                            <span className="block transition-transform duration-500 ease-out group-hover:translate-y-full">
-                              {link.label}
-                            </span>
-                            <span
-                              aria-hidden
-                              className="absolute inset-0 block -translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0"
+                        {items.map((link) => {
+                          const isActive = isControlled && activeSubRoute === link.route;
+                          const linkContent = (
+                            <>
+                              <span className="block transition-transform duration-500 ease-out group-hover:translate-y-full">
+                                {link.label}
+                              </span>
+                              <span
+                                aria-hidden
+                                className={classNames(
+                                  'absolute inset-0 block -translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0',
+                                  isActive && 'underline underline-offset-4',
+                                )}
+                              >
+                                {link.label}
+                              </span>
+                            </>
+                          );
+
+                          return isControlled ? (
+                            <button
+                              key={link.route}
+                              type="button"
+                              onClick={() => {
+                                onNavigate?.(link.route);
+
+                                setHovered(null);
+                              }}
+                              onMouseEnter={() => {
+                                setPreviewSrc(link.image);
+                              }}
+                              className={classNames(
+                                'group relative cursor-pointer block overflow-hidden text-left text-lg leading-normal text-neutral-50',
+                                isActive && 'underline underline-offset-4',
+                              )}
                             >
-                              {link.label}
-                            </span>
-                          </Link>
-                        ))}
+                              {linkContent}
+                            </button>
+                          ) : (
+                            <Link
+                              key={link.route}
+                              to={link.route}
+                              onMouseEnter={() => {
+                                setPreviewSrc(link.image);
+                              }}
+                              onClick={() => {
+                                setHovered(null);
+                              }}
+                              className="group relative block overflow-hidden text-lg leading-normal text-neutral-50"
+                            >
+                              {linkContent}
+                            </Link>
+                          );
+                        })}
                       </div>
                     ))}
                   </motion.div>

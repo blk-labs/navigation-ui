@@ -1,6 +1,10 @@
 import EnterpriseNav from '@/shared/components/enterprise-nav';
 import type { EnterpriseNavItem } from '@/shared/components/enterprise-nav';
-import { defaultFolders, defaultItems, defaultUtility } from '@/shared/components/enterprise-nav/content';
+import {
+  defaultFolders,
+  defaultItems,
+  defaultUtility,
+} from '@/shared/components/enterprise-nav/content';
 
 const pagePath = '/enterprise-nav';
 

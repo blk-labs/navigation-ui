@@ -35,10 +35,7 @@ function CategoryLink({ item, onNavigate }: { item: CategoryItem } & MenuActions
       onBlur={() => {
         setHovered(false);
       }}
-      className={classNames(
-        itemLinkClass,
-        hovered ? 'bg-[#3d4667]' : active ? 'bg-[#4a5474]' : '',
-      )}
+      className={classNames(itemLinkClass, hovered ? 'bg-[#3d4667]' : active ? 'bg-[#4a5474]' : '')}
     >
       <span
         className={classNames(

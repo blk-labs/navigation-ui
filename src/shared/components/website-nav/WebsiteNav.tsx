@@ -309,9 +309,7 @@ export default function WebsiteNav({
           id={`website-nav-menu-${openMenu}`}
           className={classNames(
             'absolute inset-x-0 z-30 hidden px-4 @min-[960px]:block',
-            announcement
-              ? 'top-[calc(100%-2.25rem)]'
-              : 'top-full mt-3',
+            announcement ? 'top-[calc(100%-2.25rem)]' : 'top-full mt-3',
           )}
           onClick={(event) => {
             if (event.target === event.currentTarget) close();

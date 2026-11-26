@@ -47,7 +47,12 @@ function SearchField({ onSearch }: { onSearch?: (query: string) => void }) {
       <label htmlFor={inputId} className="sr-only">
         Search
       </label>
-      <Icon icon={ICON.SEARCH} fontSize={18} aria-hidden="true" className="shrink-0 text-[#c5cad6]" />
+      <Icon
+        icon={ICON.SEARCH}
+        fontSize={18}
+        aria-hidden="true"
+        className="shrink-0 text-[#c5cad6]"
+      />
       <input
         id={inputId}
         value={query}
@@ -208,7 +213,10 @@ export default function EcommerceNav({
             <SearchField onSearch={onSearch} />
           </div>
           <div className="flex shrink-0 items-center gap-5 text-sm">
-            <Link to={accountHref} className={classNames('inline-flex items-center gap-2', focusRing)}>
+            <Link
+              to={accountHref}
+              className={classNames('inline-flex items-center gap-2', focusRing)}
+            >
               Account
               <Icon icon={ICON.ACCOUNT} fontSize={16} aria-hidden="true" />
             </Link>
@@ -234,7 +242,10 @@ export default function EcommerceNav({
           <div className="flex items-center justify-between">
             <button
               type="button"
-              className={classNames('grid size-11 place-items-center rounded-xl bg-[#3a4260]', focusRing)}
+              className={classNames(
+                'grid size-11 place-items-center rounded-xl bg-[#3a4260]',
+                focusRing,
+              )}
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
               onClick={() => {
@@ -304,7 +315,10 @@ export default function EcommerceNav({
                     <Link
                       to={category.href}
                       aria-current={category.id === routeId ? 'page' : undefined}
-                      className={classNames('relative block pb-1 text-sm text-[#2e3348]', focusRing)}
+                      className={classNames(
+                        'relative block pb-1 text-sm text-[#2e3348]',
+                        focusRing,
+                      )}
                       onMouseEnter={() => {
                         setHoveredId(null);
                       }}

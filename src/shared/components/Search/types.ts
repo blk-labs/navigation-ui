@@ -4,6 +4,7 @@ export interface SearchboxProps {
   searchKey?: string;
   placeholder?: string;
   suffixIconFn?: IconFn;
+  variant?: 'default' | 'animated';
 }
 
 interface IconFn {

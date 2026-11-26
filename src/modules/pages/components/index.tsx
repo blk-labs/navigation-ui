@@ -2,10 +2,11 @@ import MobileFrame from '@/shared/components/MobileFrame/MobileFrame';
 import { MobileNavBase } from '@/shared/components/MobileNav';
 import { Navbar } from '@/shared/components/Navbar';
 import { Container } from '@/shared/components/layout';
-import { GOV_PORTAL_ROUTES, MobileNavRoutes, SIDEBAR_ROUTES } from '@/shared/constants';
+import { GOV_PORTAL_ROUTES, MobileNavRoutes, SIDEBAR_ROUTES, navRoutes } from '@/shared/constants';
 import type { UserPortalProps } from '@/shared/components/UserPortal';
 import { useState } from 'react';
 import Sidebar from '@/shared/components/Sidebar';
+import EcomNav from '@/shared/components/ecommerce-web/EcomNav';
 
 const DEMO_ROLES: UserPortalProps['roles'] = [
   { label: 'Business rep', value: 'business_rep' },
@@ -129,6 +130,14 @@ export default function Components() {
               onNavigate={setActiveSidebarRoute}
               user={sidebarUser}
             />
+          </Container>
+        </div>
+        <div className="flex w-full h-[90vh] items-center flex-col gap-6">
+          <div>
+            <h2 className="text-gray-50 text-2xl font-medium">Animated Ecommerce Nav</h2>
+          </div>
+          <Container className="bg-neutral-200! h-max p-6  w-full">
+            <EcomNav routes={navRoutes} />
           </Container>
         </div>
       </section>

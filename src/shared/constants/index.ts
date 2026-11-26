@@ -1,5 +1,6 @@
 import type { NavRoute } from '../components/MobileNav';
 import type { SidebarRoutes } from '../components/Sidebar';
+import type { EcomNavRoute } from '../components/ecommerce-web';
 import { ICON } from '../utils/icon';
 
 export const MobileNavRoutes: NavRoute[] = [
@@ -206,4 +207,131 @@ export const SIDEBAR_ROUTES: NavGroup[] = [
       },
     ],
   },
+];
+
+export const navRoutes: EcomNavRoute[] = [
+  {
+    label: 'Official Store',
+    subRoutes: [
+      {
+        group: 'Featured',
+        label: 'New Arrivals',
+        route: '/official-store/new-arrivals',
+        image: '/images/new-arrivals.jpg',
+      },
+      {
+        group: 'Featured',
+        label: 'Best Sellers',
+        route: '/official-store/best-sellers',
+        image: '/images/best-sellers.jpg',
+      },
+      {
+        group: 'Featured',
+        label: 'Sale Items',
+        route: '/official-store/sale-items',
+        image: '/images/sale-items.jpg',
+      },
+      {
+        group: 'Brands',
+        label: 'Apple',
+        route: '/official-store/apple',
+        image: '/images/apple.jpg',
+      },
+      {
+        group: 'Brands',
+        label: 'Samsung',
+        route: '/official-store/samsung',
+        image: '/images/samsung.jpg',
+      },
+      {
+        group: 'Brands',
+        label: 'Sony',
+        route: '/official-store/sony',
+        image: '/images/sony.jpg',
+      },
+      {
+        group: 'Top Picks',
+        label: 'Trending',
+        route: '/official-store/trending',
+        image: '/images/trending.jpg',
+      },
+      {
+        group: 'Top Picks',
+        label: "Editor's Choice",
+        route: '/official-store/editors-choice',
+        image: '/images/editor-choice.jpg',
+      },
+      {
+        group: 'Top Picks',
+        label: 'Most Popular',
+        route: '/official-store/most-popular',
+        image: '/images/most-popular.png',
+      },
+    ],
+  },
+  {
+    label: 'Electronics',
+    subRoutes: [
+      {
+        group: 'Mobile',
+        label: 'Smartphones',
+        route: '/electronics/smartphones',
+        image: '/images/smartphones.jpg',
+      },
+      {
+        group: 'Mobile',
+        label: 'Tablets',
+        route: '/electronics/tablets',
+        image: '/images/tablets.jpg',
+      },
+      {
+        group: 'Mobile',
+        label: 'Accessories',
+        route: '/electronics/accessories',
+        image: '/images/accessories.jpg',
+      },
+      {
+        group: 'Computing',
+        label: 'Laptops',
+        route: '/electronics/laptops',
+        image: '/images/laptops.jpg',
+      },
+      {
+        group: 'Computing',
+        label: 'Desktops',
+        route: '/electronics/desktops',
+        image: '/images/desktops.jpg',
+      },
+      {
+        group: 'Computing',
+        label: 'Monitors',
+        route: '/electronics/monitors',
+        image: '/images/monitors.jpg',
+      },
+      {
+        group: 'Audio',
+        label: 'Headphones',
+        route: '/electronics/headphones',
+        image: '/images/headphones.jpg',
+      },
+      {
+        group: 'Audio',
+        label: 'Speakers',
+        route: '/electronics/speakers',
+        image: '/images/speakers.jpg',
+      },
+      {
+        group: 'Audio',
+        label: 'Soundbars',
+        route: '/electronics/soundbars',
+        image: '/images/soundbars.jpg',
+      },
+    ],
+  },
+  { label: 'Fashion' },
+  { label: 'Home' },
+  { label: 'Supermarket' },
+  { label: 'Gadgets' },
+  { label: 'Kitchen' },
+  { label: 'Office' },
 ];
